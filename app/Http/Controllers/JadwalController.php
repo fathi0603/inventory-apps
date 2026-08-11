@@ -195,6 +195,28 @@ foreach ($jadwal as &$data) {
 {
     $shift = $request->shift;
 
+    
+    $jumlahShift = collect($shift)
+        ->filter(function ($value) {
+            return $value != 'OFF';
+        })
+        ->count();
+
+    
+    $totalJam = $jumlahShift * 8;
+
+
+    if ($totalJam > 48) {
+
+        return back()
+            ->withInput()
+            ->with(
+                'error',
+                'Jadwal tidak dapat disimpan. Total jam kerja maksimal adalah 48 jam per minggu.'
+            );
+    }
+
+    
     foreach ($shift as $hari => $value) {
 
         Jadwal::updateOrCreate(
@@ -207,10 +229,10 @@ foreach ($jadwal as &$data) {
                 'shift' => $value
             ]
         );
-
     }
 
-    return redirect('/jadwal?periode=' . $periode);
+    return redirect('/jadwal?periode=' . $periode)
+        ->with('success', 'Jadwal berhasil diperbarui.');
 }
 
     public function destroy($id)
