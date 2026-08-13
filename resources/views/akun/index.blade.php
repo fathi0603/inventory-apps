@@ -113,7 +113,7 @@ input:focus{
 
     <div class="form-group">
         <label>Konfirmasi Password</label>
-        <input type="password" name="password_konfirmasi">
+        <input type="password" name="konfirmasi">
     </div>
 
     <button type="submit" class="btn-simpan">
