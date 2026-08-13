@@ -46,7 +46,7 @@ class PetugasController extends Controller
    
     UserLogin::create([
     'username'   => $username,
-    'password'   => Hash::make('123456'),
+    'password'   => Hash::make('12345'),
     'role'       => $request->jabatan,
     'id_petugas' => $petugas->id_petugas,
 ]);
