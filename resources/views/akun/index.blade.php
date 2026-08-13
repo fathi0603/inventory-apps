@@ -90,7 +90,7 @@ input:focus{
 
 <div class="form-card">
 
-<form action="/akun/update-password" method="POST">
+<form action="/akun/password" method="POST">
 
     @csrf
 

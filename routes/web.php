@@ -120,6 +120,7 @@ use App\Http\Controllers\LoginController;
 Route::get('/login', [LoginController::class, 'formLogin']);
 Route::post('/login', [LoginController::class, 'prosesLogin']);
 Route::get('/logout', [LoginController::class, 'logout']);
+Route::post('/akun/update-password', [LoginController::class, 'ubahPassword']);
 
 use App\Http\Controllers\DashboardController;
 
