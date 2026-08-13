@@ -230,7 +230,7 @@ public function store(Request $request)
     $formOrder = FormOrder::create([
     'tanggal_order' => $request->tanggal_order,
     'departemen'    => $request->departemen,
-    'dibuat_oleh'   => session('id_user'),
+    'dibuat_oleh'   => session('id_petugas'),
     'dicek_oleh'    => null,
     'status'        => 'Diajukan',
     'alasan'        => $request->alasan,
