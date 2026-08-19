@@ -20,7 +20,7 @@ body::before{
     width:500px;
     height:500px;
 
-    background:url('/images/logo-rs.png') no-repeat center;
+    background:url('/images/logos-rs.png') no-repeat center;
     background-size:contain;
 
     opacity:0.08;
@@ -124,7 +124,7 @@ body::before{
 <div class="container">
     <div class="login-box">
         <div class="header">
-            <img src="/images/logo-rs.png" width="120">
+            <img src="/images/logos-rs.png" width="120">
             <h1>Laboratorium</h1>
             <p>RS Ridhoka Salma</p>
         </div>
