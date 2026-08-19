@@ -140,7 +140,7 @@
             )->format('Y-m') == $bulan;
         });
     });
-    @endphp
+@endphp
 
     @foreach($barang as $item)
 
