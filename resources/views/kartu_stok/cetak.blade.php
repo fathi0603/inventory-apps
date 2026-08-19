@@ -128,6 +128,19 @@
         $nomor = 1;
     @endphp
 
+    @php
+    $barang = $barang->sortByDesc(function ($item) use ($bulan) {
+        return $item->penggunaanBarang->contains(function ($penggunaan) use ($bulan) {
+            if (!$penggunaan->pemeriksaan) {
+                return false;
+            }
+
+            return \Carbon\Carbon::parse(
+                $penggunaan->pemeriksaan->tanggal_pemeriksaan
+            )->format('Y-m') == $bulan;
+        });
+    });
+    @endphp
 
     @foreach($barang as $item)
 
